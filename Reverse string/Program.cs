@@ -9,15 +9,18 @@ namespace Reverse_string
     {
         static void Main(string[] args)
         {
-            Int64 choice;
+            int choice;
+            string text;
    
             Console.WriteLine("1. Reverse a string");
             Console.WriteLine("2. Exit");
-            choice = Convert.ToInt64(Console.ReadLine());
+            choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
                 case 1:
-                    Console.WriteLine(Reverse());
+                    Console.WriteLine("Enter the text to be reversed");
+                    text = Console.ReadLine();
+                    Console.WriteLine(Reverse(text));
                     break;
 
                 case 2:
@@ -27,14 +30,9 @@ namespace Reverse_string
             Console.ReadLine();
         }
 
-        static string Reverse()
+        static string Reverse(string text)
         {
-            string text;
             string reversed = "";
-            Console.WriteLine("Please enter the text to be reversed");
-            text = Console.ReadLine();
-
-            int X = text.Length;
             for (int i = text.Length - 1; i >= 0; i--)
             {
                 reversed += text[i];
